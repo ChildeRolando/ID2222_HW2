@@ -7,12 +7,19 @@ class itemPairs:
   manhattanDistance = []
   level = 0
 
-  def __init__(self, level) -> None:
+  def __init__(self, level, path) -> None:
     self.level = level
     pass
   
   def count_disk(self, path):
-    pass
+    baskets = []
+    with open('T10I4D100K.dat') as f:
+      for line in f:
+        items = line.split(' ')
+        items.remove('\n')
+        baskets.append(frozenset(items))
+    return baskets
+
 
   def generate_next_level_pairs(self):
     pass
